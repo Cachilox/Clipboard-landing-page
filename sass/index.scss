@@ -1,0 +1,379 @@
+@use 'variables';
+@use 'mixin';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+body {
+    font-size: 18px;
+    font-family: 'Bai Jamjuree', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 80px 0;
+}
+
+.hero {
+    padding: 120px 0 80px;
+    background-image: url('../images/bg-header-mobile.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    text-align: center;
+
+    &__img {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 4.5em;
+    }
+    &__title {
+        @include mixin.title(variables.$Dark-Grayish-Blue, 1.7em, 300px, 0 auto );
+        margin-bottom: 1rem;
+    }
+    &__paragraph {
+        @include mixin.paragraph(0.91em, variables.$Grayish-Blue, 1.5, 315px, 1rem auto);
+    }
+}
+.buttons {
+    @include mixin.flex(2.3em, 2em, center);
+
+    &__cta {
+        background-color: variables.$Strong-Cyan;
+        text-decoration: none;
+        color: #fff;
+        padding: 1em 0;
+        border-radius: 2em;
+        -webkit-border-radius: 2em;
+        -moz-border-radius: 2em;
+        -ms-border-radius: 2em;
+        -o-border-radius: 2em;
+        font-weight: 600;
+        width: 313px;
+        margin: auto;
+        box-shadow: 0 0 10px -5 variables.$Strong-Cyan;
+        &:hover {
+            background-color: hsla(171, 61%, 40%, 0.767);
+        }
+    
+        &--blue {
+            background-color: variables.$Light-Blue;
+            box-shadow: 0 0 10px -5 variables.$Light-Blue;
+            &:hover {
+                background-color: hsla(233, 100%, 69%, 0.767);
+            }
+        }
+
+    }
+}
+
+// TRACK
+.track {
+
+    &__texts {
+        text-align: center;
+    }
+    &__title {
+        color: variables.$Dark-Grayish-Blue;
+        font-size: 2rem;
+    }
+    &__paragraph {
+        @include mixin.paragraph(0.9em, variables.$Grayish-Blue, 1.6, 303px, 1.5em auto);
+    }
+    &__image {
+        width: 90%;
+        display: block;
+        max-width: 400px;
+        margin: 3.5em auto;
+    }
+    &__articles {
+        @include mixin.flex(2.5em, 3.5em, center)
+    }
+    &__offer {
+        color: variables.$Dark-Grayish-Blue;
+        font-size: 1.5em;
+    }
+    &__copy {
+        margin: 0.7em auto;
+        line-height: 1.5;
+        width: 300px;
+        color: variables.$Grayish-Blue;
+    }
+}
+
+// CLIPBOARD
+.clipboard {
+    text-align: center;
+
+    &__picture {
+        margin: 3em 0 6em;
+    }
+    &__img {
+        width: 100%;
+        max-width: 400px;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    &__offer {
+        @include mixin.flex(4em, 3.5em)
+    }
+    &__icon {
+        width: 45px;
+        margin: 0 auto;
+        display: block;
+        margin-bottom: 1.5em;
+    }
+    &__title {
+        @include mixin.title(variables.$Dark-Grayish-Blue, 1.5em, 245px, auto);
+    }
+    &__paragraph {
+        color: variables.$Grayish-Blue;
+        line-height: 1.5;
+        margin: 1rem auto;
+        width: 308px;
+        font-size: 0.9em;
+    }
+}
+
+// BRANDS
+.brands {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 4.5em;
+}
+.action {
+    text-align: center;
+
+    &__title {
+        width: 277px;
+        margin: auto;
+        font-size: 1.3em;
+        color: variables.$Dark-Grayish-Blue;
+    }
+    &__paragraph {
+        width: 312px;
+        margin: 1em auto;
+        color: variables.$Grayish-Blue;
+    }
+}
+
+// FOOTER
+.footer {
+    background-color: #f2f2f2;
+    text-align: center;
+
+    &__img {
+        display: block;
+        width: 100px;
+        margin: 0 auto;
+    }
+    &__links {
+        @include mixin.flex(4em, 1.5em);
+        margin-bottom: 4em;
+        align-items: center;
+    }
+    &__link {
+        text-decoration: none;
+        color: variables.$Dark-Grayish-Blue;
+
+        &:hover {
+            color: variables.$Strong-Cyan;
+        }
+    }
+    &__social {
+        display: flex;
+        justify-content: center;
+        gap: 3em;
+    }
+    &__media {
+        text-decoration: none;
+    }
+    &__icon {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero {
+        padding: 120px 0 90px;
+        background-image: url('../images/bg-header-desktop.png');
+
+        &__title {
+            font-size: 2.5em;
+            width: 700px;
+        }
+        &__paragraph {
+            width: 685px;
+            font-size: 1.2em;
+        }
+
+    }
+    .buttons {
+        margin-top: 3em;
+        flex-direction: row;
+        justify-content: center;
+
+    
+        &__cta {
+            padding: 1em 1em;
+            width: 230px;
+            margin: 0;
+            text-align: center;
+        }
+    }
+    .track {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 80px 0 0;
+        
+        &__title {
+            font-size: 2.5rem;
+        }
+        &__paragraph {
+            width: 700px;
+            font-size: 1em;
+        }
+        &__texts {
+            width: 90%;
+            margin: 0 auto;
+            margin-bottom: 1.5em;
+        }
+        &__picture {
+            position: relative;
+            width: 50%;
+            overflow: hidden;
+            height: 700px;
+        }
+        &__image {
+            width: 125%;
+            max-width: 650px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+        }
+        &__articles {
+            width: 42%;
+            gap: 3em;
+            margin: 0 auto 2.5em;
+            text-align: left;
+            align-self: center;
+        }
+        &__offer {
+            color: variables.$Dark-Grayish-Blue;
+            font-size: 1.5em;
+            margin-bottom: .3em;
+        }
+        &__copy {
+            margin: 0.2em;
+            line-height: 1.5;
+            color: variables.$Grayish-Blue;
+            font-size: 0.9em;
+            width: 350px;
+        }
+    }
+    .clipboard {
+        padding: 20px 0 80px;
+
+        .access {
+            width: 480px;
+            font-size: 2em;
+        }
+        .whether {
+            width: 680px;
+            font-size: 1em;
+        }
+        .text {
+            font-size: 1.4em;
+        }
+    
+        &__img {
+            max-width: 900px;
+            margin-top: 7rem;
+        }
+        
+        &__offer {
+            flex-direction: row;
+            gap: 2em;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        &__item {
+            flex: 1;
+        }
+    }
+
+    .brands {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2em;
+    
+        &__item {
+            min-width: 100px;
+            max-width: 150px;
+            flex: 1;
+        }
+    }
+    .action {
+        &__title {
+            width: 490px;
+            font-size: 1.8em;
+        }
+        &__paragraph {
+            width: 690px;
+        }
+    }
+    .footer {
+        &__container {
+            display: flex;
+            gap: 2em;
+            align-items: center;
+        }
+    
+        &__img {
+            width: 70px;
+        }
+        &__links {
+            margin: 0 0 0 5em;
+            text-align: left;
+            flex-direction: row;
+            gap: 1em;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        &__link {
+            width: 28%;
+            &:hover {
+                color: variables.$Strong-Cyan;
+            }
+        }
+        &__social {
+            margin-left: auto;
+        }
+        .two {
+            order: 1;
+        }
+        .four {
+            order: 1;
+        }
+    }
+}
+
+.attribution {
+  font-size: .72em;
+  text-align: center;
+  padding: 5px;
+}
+.attribution a {
+  color: variables.$Strong-Cyan;
+  text-decoration: none;
+}

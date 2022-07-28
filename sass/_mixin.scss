@@ -1,0 +1,22 @@
+@mixin title($color, $ftsize, $width, $margin) {
+    color: $color;
+    font-size: $ftsize;
+    width: $width;
+    margin: $margin;
+}
+
+@mixin paragraph($ftsize, $color, $lineH, $width, $margin) {
+    font-size: $ftsize;
+    color: $color; 
+    line-height: $lineH; 
+    width: $width;
+    margin: $margin; 
+}
+
+@mixin flex($marginT, $gap, $center: unset) {
+    display: flex;
+    margin-top: $marginT;
+    flex-direction: column;
+    gap: $gap;
+    text-align: $center;
+}
